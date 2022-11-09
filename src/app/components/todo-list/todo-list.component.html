@@ -1,0 +1,30 @@
+<div class="container">
+  <form #todoForm="ngForm">
+
+    <div class="card shadow">
+      <h1 class="card-header text-center"> Liste Todo </h1>
+      <div class="card-body">
+        <ul class=" list-unstyled list-group" type="button" *ngFor="let todo of todos">{{todo.titre}} : {{todo.description}}
+          <div>
+            <i class=" material-icons mx-3 " (click)="deleteItem(todo)"> delete</i>
+            <i type="button" class="material-icons">edit</i>
+
+          </div>
+          <!--
+    <i (click)="deleteItem(todo)"type="button" class="material-icons">delete</i>
+  <i type="button" class="material-icons">edit</i> -->
+
+        </ul>
+      </div>
+      <div class="card-body">
+        <!-- <ul class="list-group" *ngFor="let todo of todoService.todoList"> -->
+        <ul class="list-group" *ngFor="let todo of todos">
+
+
+
+
+        </ul>
+      </div>
+    </div>
+  </form>
+</div>
