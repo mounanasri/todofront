@@ -1,27 +1,20 @@
-<div class="container">
+<div class="card shadow text-center mb-5">
 
+<div class="card-header bg-primary text-light">
+  <h4>ADD TODO</h4>
+</div>
+<div class="card-body">
 
-  <div class="card shadow ">
-    <div class="card-header">
-      <h4 class="card-header text-center">Ajouter un TODO</h4>
-    </div>
+<form #addTodo="ngForm" (ngSubmit)="onSubmit(addTodo)">
+  <div class="form-group">
+    <label>id : </label> <input type="number" name="id" class="form-control" [(ngModel)]="id" >
+    <label>titre : </label> <input type="text" name="titre" class="form-control" [(ngModel)]="titre" >
+    <label>statut : </label> <input type="text" name="statut" class="form-control" [(ngModel)]="statut"  >
+    <label>date : </label> <input type="text" name="date" class="form-control" [(ngModel)]="date"  >
+    <label>description : </label> <input type="text" name="description" class="form-control"  [(ngModel)]="description" >
 
-    <div class="card-body">
-      <div class="form-group">
-        <form (ngSubmit)="onSubmit()" #todoForm="ngForm">
-          <input  type="text" name="todo" class="form-control" placeholder="Titre . . ." id="titre" required>
-
-          <input type="text" name="todo" class="form-control" placeholder=" Description . . ." id="titre" required>
-
-
-          <button type="submit" class="btn btn-primary" (click)="addTodo()"> Ajouter </button>
-        </form>
-
-        </div>
-
-
-      <!-- {{todo}} -->
-    </div>
   </div>
-  <div>
-  </div>
+  <button class="btn btn-primary" [disabled]="addTodo.invalid"> ADD </button>
+</form>
+</div>
+</div>

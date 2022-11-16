@@ -1,0 +1,45 @@
+
+
+<div>
+  <a class="btn btn-primary" (click)="toogleShow()" >Create todo list</a>
+</div>
+
+<div>
+  <app-todo-form #addTodo *ngIf="show"></app-todo-form>
+  </div>
+<div class="container">
+  <div class="table-responsive">
+    <h1>Liste des TODOS</h1>
+    <table class="table table-striped">
+      <tr class="info">
+        <!-- <th>Id</th> -->
+        <th>titre</th>
+        <th>Statut</th>
+        <th>date</th>
+        <th>Description</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </tr>
+      <tr *ngFor="let todo of todos">
+        <!-- <td>{{i + 1}}</td> -->
+        <td>{{todo.titre | uppercase}}</td>
+        <td>{{todo.statut }}</td>
+        <td>{{todo.date}}</td>
+        <td>{{todo.description}}</td>
+
+        <td>
+          <button  class="btn btn-danger " (click)="delete(todo)">
+             <span class="glyphicon glyphicon-remove"></span> Delete
+          </button>
+        </td>
+        <td>
+          <button  class="btn btn-primary " >
+             <span class="glyphicon glyphicon-edit"></span> Edit
+          </button>
+        </td>
+        <!-- <td><a (click)="editTodo(i)">Edit</a></td> -->
+      </tr>
+    </table>
+  </div>
+</div>
+
