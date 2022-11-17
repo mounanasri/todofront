@@ -1,20 +1,22 @@
-<div class="card shadow text-center mb-5">
+<div id="myModal" [ngClass]="displayed === false ? 'modal-displayed card-body' : 'modal-hidden card-body'">
 
-<div class="card-header bg-primary text-light">
-  <h4>ADD TODO</h4>
-</div>
-<div class="card-body">
 
-<form #addTodo="ngForm" (ngSubmit)="onSubmit(addTodo)">
-  <div class="form-group">
-    <label>id : </label> <input type="number" name="id" class="form-control" [(ngModel)]="id" >
-    <label>titre : </label> <input type="text" name="titre" class="form-control" [(ngModel)]="titre" >
-    <label>statut : </label> <input type="text" name="statut" class="form-control" [(ngModel)]="statut"  >
-    <label>date : </label> <input type="text" name="date" class="form-control" [(ngModel)]="date"  >
-    <label>description : </label> <input type="text" name="description" class="form-control"  [(ngModel)]="description" >
 
+    <h4>ADD TODO</h4>
+
+  <div class="modal-content">
+
+    <form #addTodo="ngForm" (ngSubmit)="onSubmit(addTodo)">
+      <div class="form-group">
+        <label>id : </label> <input type="number" name="id" class="form-control" [(ngModel)]="id">
+        <label>titre : </label> <input type="text" name="titre" class="form-control" [(ngModel)]="titre">
+        <label>statut : </label> <input type="text" name="statut" class="form-control" [(ngModel)]="statut">
+        <label>date : </label> <input type="text" name="date" class="form-control" [(ngModel)]="date">
+        <label>description : </label> <input type="text" name="description" class="form-control"
+          [(ngModel)]="description">
+
+      </div>
+      <button class="btn btn-primary" [disabled]="addTodo.invalid" (click)="hideModal()"> ADD </button>
+    </form>
   </div>
-  <button class="btn btn-primary" [disabled]="addTodo.invalid"> ADD </button>
-</form>
-</div>
 </div>

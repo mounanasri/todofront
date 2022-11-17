@@ -40,7 +40,7 @@ export class TodoListComponent implements OnInit {
 
 
     toogleShow() {
-      this.show= !this.show;
+      this.todoForm.showModal();
   }
 
 

@@ -17,6 +17,8 @@ titre: string = '';
 statut: string ='';
 date: string ='';
 description: string ='';
+displayed: boolean = false;
+routerLink: any;
 
   constructor(public todosService: TodosService) { }
 
@@ -27,8 +29,16 @@ description: string ='';
     let monTodo: Todo = new Todo (this.id, this.titre,this.statut,this.date,this.description);
     this.todosService.addTodo(monTodo).subscribe((todo :Todo) => {
       console.log(todo)
-      window.location.reload();
    })
+  }
+
+  showModal(){
+    this.displayed = true;
+    console.log('Hich' + this.displayed )
+  }
+
+  hideModal(){
+    this.displayed = false;
   }
 
 }
