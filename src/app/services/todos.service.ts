@@ -25,6 +25,9 @@ export class TodosService {
   return this.http.post<Todo>(this.apiUrl+'/todos',todo)
  }
 
+ editTodo(todo: Todo){
+  return this.http.put<Todo>(this.apiUrl+'/todos/' +todo.todo_id ,todo )
+ }
 
 
 

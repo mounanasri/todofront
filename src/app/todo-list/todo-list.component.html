@@ -1,45 +1,37 @@
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+  <div class="w3-container" style="margin-top:75px">
 
+    <h1 class="w3-xxxlarge w3-text-blue"><b>Liste TODOS.</b>
+    </h1>
 
-<div>
-  <a class="btn btn-primary" (click)="toogleShow()" >Create todo list</a>
-</div>
+    <div class="col-3">
+      <div class="card" style="width: 25rem;">
+        <div class="card-body " style="width: 25rem; ">
+        <ul *ngFor="let todo of todos" class="card ul">
+          <li class="  thicker w3-grey-light w3-xlarge w3-padding-32">
 
-<div>
+            {{todo.titre | uppercase}}</li>
+            <li class="w3-padding-16 ">
+              <label class="thicker"> Id :</label>
+              {{todo.todo_id }}</li>
+          <li class="w3-padding-16 ">
+            <label class="thicker"> Statut :</label>
+            {{todo.statut }}</li>
+          <li class="w3-padding-16">
+            <label class="thicker"> Date :</label>
+            {{todo.date }}</li>
+          <li class="w3-padding-16">
+            <label class="thicker"> Description :</label>
+            {{todo.description }}</li>
+
+          <button (click)="delete(todo)" class="w3-button w3-red btn btn-primary  w3-hover-black">Delete</button>
+
+          <button (click)="update(todo)" class="w3-button w3-red btn btn-primary  w3-hover-black">Modifier</button>
+
+        </ul>
+
+    </div>
+  </div>
+
   <app-todo-form #addTodo *ngIf="show"></app-todo-form>
-  </div>
-<div class="container">
-  <div class="table-responsive">
-    <h1>Liste des TODOS</h1>
-    <table class="table table-striped">
-      <tr class="info">
-        <!-- <th>Id</th> -->
-        <th>titre</th>
-        <th>Statut</th>
-        <th>date</th>
-        <th>Description</th>
-        <th>Delete</th>
-        <th>Edit</th>
-      </tr>
-      <tr *ngFor="let todo of todos">
-        <!-- <td>{{i + 1}}</td> -->
-        <td>{{todo.titre | uppercase}}</td>
-        <td>{{todo.statut }}</td>
-        <td>{{todo.date}}</td>
-        <td>{{todo.description}}</td>
-
-        <td>
-          <button  class="btn btn-danger " (click)="delete(todo)">
-             <span class="glyphicon glyphicon-remove"></span> Delete
-          </button>
-        </td>
-        <td>
-          <button  class="btn btn-primary " >
-             <span class="glyphicon glyphicon-edit"></span> Edit
-          </button>
-        </td>
-        <!-- <td><a (click)="editTodo(i)">Edit</a></td> -->
-      </tr>
-    </table>
-  </div>
-</div>
 

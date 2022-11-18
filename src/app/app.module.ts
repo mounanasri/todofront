@@ -5,24 +5,15 @@ import { FormsModule , ReactiveFormsModule }    from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
-import {  Route } from '@angular/router';
 import { TodoFormComponent } from './todo-form/todo-form.component';
-
-
-// const routes: Route[] = [
-
-//     {path: "", component: TodoListComponent},
-//     {path: "addtodo", component: TodoFormComponent}
-
-
-
-// ];
+import { TodoEditComponent } from './todo-edit/todo-edit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    TodoEditComponent
  ],
   imports: [
     BrowserModule,
@@ -30,8 +21,6 @@ import { TodoFormComponent } from './todo-form/todo-form.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-
-
 
   ],
   providers: [],
